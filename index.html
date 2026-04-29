@@ -37,7 +37,6 @@
       position: relative;
     }
 
-    /* Grain */
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -45,12 +44,10 @@
       pointer-events: none; z-index: 0;
     }
 
-    /* Blobs */
     .blob { position: fixed; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0; opacity: 0.3; }
     .b1 { width:400px;height:400px;background:#c8e6d4;top:-100px;right:-100px; }
     .b2 { width:300px;height:300px;background:#f5e2b8;bottom:-60px;left:-80px; }
 
-    /* Header */
     header {
       position: relative; z-index: 1;
       width: 100%; max-width: 560px;
@@ -63,16 +60,12 @@
     .logo span { color: var(--amber); }
     .header-tag { font-size: 10px; font-weight: 600; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }
 
-    /* Layout */
     .layout { position: relative; z-index: 1; width: 100%; max-width: 560px; display: flex; flex-direction: column; gap: 14px; }
 
-    /* Card */
     .card { background: #faf7f2; border: 1.5px solid var(--border); border-radius: 20px; padding: 22px 20px; }
 
-    /* Section label */
     .sec-lbl { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
 
-    /* Difficulty tabs — matches Java: Easy(1-50,15) Medium(1-100,10) Hard(1-200,7) */
     .diff-tabs { display: flex; background: var(--cream2); border-radius: 12px; padding: 4px; gap: 4px; border: 1.5px solid var(--border); }
     .diff-tab {
       flex: 1; padding: 9px 4px; border: none; border-radius: 9px;
@@ -84,14 +77,11 @@
     .diff-tab:not(.active):hover { background: var(--cream); color: var(--text); }
     .diff-tab small { display: block; font-size: 10px; opacity: 0.8; font-weight: 600; margin-top: 1px; }
 
-    /* Stats */
     .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
     .stat { background: var(--cream2); border: 1.5px solid var(--border); border-radius: 14px; padding: 12px 8px; text-align: center; }
     .stat-num { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; color: var(--green); line-height: 1; }
     .stat-lbl { font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
 
-    /* Attempts bar */
-    .attempts-section { }
     .attempts-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
     .attempts-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; }
     .attempts-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--green); }
@@ -100,40 +90,15 @@
     .attempts-fill { height: 100%; border-radius: 99px; background: var(--green); transition: width 0.5s ease, background 0.3s; }
     .attempts-fill.warn { background: var(--red); }
 
-    /* Range visualizer */
     .range-section { text-align: center; }
     .range-eyebrow { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
     .range-bar-wrap { position: relative; height: 48px; margin-bottom: 8px; }
-    .range-track {
-      position: absolute; top: 50%; left: 0; right: 0;
-      height: 6px; transform: translateY(-50%);
-      background: var(--cream2); border-radius: 99px; border: 1.5px solid var(--border);
-    }
-    .range-fill {
-      position: absolute; top: 50%; height: 6px;
-      transform: translateY(-50%);
-      background: linear-gradient(90deg, var(--green-light), var(--green));
-      border-radius: 99px;
-      transition: all 0.5s ease;
-    }
-    .range-pointer {
-      position: absolute; top: 50%; transform: translate(-50%, -50%);
-      width: 26px; height: 26px; border-radius: 50%;
-      background: var(--green); border: 3px solid #fff;
-      box-shadow: 0 2px 8px rgba(30,92,75,0.35);
-      transition: left 0.5s ease;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 12px;
-    }
+    .range-track { position: absolute; top: 50%; left: 0; right: 0; height: 6px; transform: translateY(-50%); background: var(--cream2); border-radius: 99px; border: 1.5px solid var(--border); }
+    .range-fill { position: absolute; top: 50%; height: 6px; transform: translateY(-50%); background: linear-gradient(90deg, var(--green-light), var(--green)); border-radius: 99px; transition: all 0.5s ease; }
+    .range-pointer { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 26px; height: 26px; border-radius: 50%; background: var(--green); border: 3px solid #fff; box-shadow: 0 2px 8px rgba(30,92,75,0.35); transition: left 0.5s ease; display: flex; align-items: center; justify-content: center; font-size: 12px; }
     .range-minmax { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; color: var(--muted); }
 
-    /* Hint display — matches Java hint() method */
-    .hint-banner {
-      display: flex; align-items: center; gap: 10px;
-      border-radius: 12px; padding: 10px 14px;
-      border: 1.5px solid; min-height: 44px;
-      transition: all 0.3s;
-    }
+    .hint-banner { display: flex; align-items: center; gap: 10px; border-radius: 12px; padding: 10px 14px; border: 1.5px solid; min-height: 44px; transition: all 0.3s; }
     .hint-banner.cold  { background: var(--blue-light);  border-color: #a8d0f0; color: var(--blue); }
     .hint-banner.warm  { background: var(--amber-light); border-color: #e0c070; color: var(--amber); }
     .hint-banner.hot   { background: #fde8e8; border-color: #f0b0a8; color: var(--red); }
@@ -141,19 +106,12 @@
     .hint-icon { font-size: 20px; flex-shrink: 0; }
     .hint-text { font-family: 'Caveat', cursive; font-size: 17px; font-weight: 700; }
 
-    /* Guess history */
     .history-wrap { display: flex; flex-wrap: wrap; gap: 6px; min-height: 32px; }
-    .guess-chip {
-      padding: 4px 11px; border-radius: 99px;
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 12px; font-weight: 700; border: 1.5px solid;
-      animation: chipIn 0.25s cubic-bezier(0.34,1.56,0.64,1);
-    }
+    .guess-chip { padding: 4px 11px; border-radius: 99px; font-family: 'Instrument Sans', sans-serif; font-size: 12px; font-weight: 700; border: 1.5px solid; animation: chipIn 0.25s cubic-bezier(0.34,1.56,0.64,1); }
     @keyframes chipIn { from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;} }
     .chip-low  { background: var(--blue-light);  border-color: #a8d0f0; color: var(--blue); }
     .chip-high { background: var(--red-light);   border-color: #f0b0a8; color: var(--red); }
 
-    /* Input */
     .input-label { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; text-align: center; }
     .input-row { display: flex; gap: 10px; }
     input[type="number"] {
@@ -165,27 +123,19 @@
       transition: all 0.2s;
       -moz-appearance: textfield;
     }
-    input::-webkit-inner-spin-button,
-    input::-webkit-outer-spin-button { -webkit-appearance: none; }
+    input::-webkit-inner-spin-button, input::-webkit-outer-spin-button { -webkit-appearance: none; }
     input:focus { border-color: var(--green); background: #fff; box-shadow: 0 0 0 4px rgba(30,92,75,0.08); }
     input.low  { border-color: var(--blue); background: var(--blue-light); animation: shake 0.3s ease; }
     input.high { border-color: var(--red);  background: var(--red-light);  animation: shake 0.3s ease; }
     input.ok   { border-color: var(--green2); background: #edf7f2; }
     @keyframes shake { 0%,100%{transform:translateX(0);}25%{transform:translateX(-7px);}75%{transform:translateX(7px);} }
 
-    /* Buttons */
-    .btn {
-      padding: 14px 22px; border-radius: 14px;
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 14px; font-weight: 700; cursor: pointer;
-      border: 2px solid; transition: all 0.18s; white-space: nowrap;
-    }
+    .btn { padding: 14px 22px; border-radius: 14px; font-family: 'Instrument Sans', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; border: 2px solid; transition: all 0.18s; white-space: nowrap; }
     .btn:hover:not(:disabled) { transform: translateY(-2px); }
     .btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none !important; }
     .btn-submit { background: var(--green); color: #fff; border-color: var(--green); box-shadow: 0 4px 14px rgba(30,92,75,0.25); }
     .btn-submit:hover:not(:disabled) { background: var(--green2); }
 
-    /* Message */
     .msg-row { text-align: center; min-height: 22px; margin-top: 8px; }
     .msg { font-family: 'Caveat', cursive; font-size: 17px; font-weight: 700; }
     .msg.low  { color: var(--blue); }
@@ -193,13 +143,11 @@
     .msg.err  { color: var(--red); }
     .msg.ok   { color: var(--green2); }
 
-    /* Character */
     .char-row { display: flex; align-items: center; gap: 14px; background: var(--green); border-radius: 16px; padding: 14px 18px; }
     .char { font-size: 36px; animation: nod 3s ease-in-out infinite; }
     @keyframes nod { 0%,100%{transform:rotate(-3deg);}50%{transform:rotate(3deg);} }
     .speech { font-family: 'Caveat', cursive; font-size: 16px; font-weight: 700; color: #d4e8e0; line-height: 1.4; }
 
-    /* Win / Lose screen */
     #result-screen { display: none; text-align: center; padding: 12px 0; }
     #result-screen.show { display: block; }
     .result-icon { font-size: 64px; margin-bottom: 12px; animation: bounceIn 0.5s cubic-bezier(0.34,1.56,0.64,1); }
@@ -208,16 +156,13 @@
     .result-number { font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 900; color: var(--green); line-height: 1; margin-bottom: 6px; }
     .result-number.lose { color: var(--red); }
     .result-sub { font-family: 'Caveat', cursive; font-size: 20px; color: var(--muted); margin-bottom: 6px; }
-    /* Rating matches Java: ≤0.3=Excellent, ≤0.6=Good job, else=Keep practising */
     .result-rating { font-family: 'Caveat', cursive; font-size: 22px; font-weight: 700; color: var(--amber); margin-bottom: 20px; }
     .record-badge { display: inline-block; background: var(--amber-light); border: 2px solid #e0c070; color: var(--amber); font-size: 13px; font-weight: 700; padding: 5px 16px; border-radius: 99px; margin-bottom: 18px; }
     .btn-again { background: var(--green); color: #fff; border: 2px solid var(--green); border-radius: 14px; padding: 14px 40px; font-family: 'Instrument Sans', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 16px rgba(30,92,75,0.25); transition: all 0.2s; }
     .btn-again:hover { background: var(--green2); transform: translateY(-2px); }
 
-    /* Confetti */
     .conf { position: fixed; pointer-events: none; z-index: 999; animation: confFall linear forwards; }
     @keyframes confFall { 0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(600deg);opacity:0;} }
-
     .deco-line { display: block; width: 50px; height: 5px; background: var(--amber); border-radius: 3px; margin: 8px auto 0; opacity: 0.65; }
   </style>
 </head>
@@ -233,55 +178,29 @@
 
 <div class="layout">
 
-  <!-- Character -->
   <div class="char-row">
     <div class="char">🧒</div>
     <div class="speech" id="speech">I'm thinking of a number... Can you guess it? 🤔</div>
   </div>
 
-  <!-- Difficulty — matches Java exactly: Easy(1-50,15) Medium(1-100,10) Hard(1-200,7) -->
   <div>
     <div class="sec-lbl">Difficulty</div>
     <div class="diff-tabs">
-      <button class="diff-tab easy active" onclick="setDiff('easy')">
-        🌱 Easy
-        <small>1–50 · 15 attempts</small>
-      </button>
-      <button class="diff-tab medium" onclick="setDiff('medium')">
-        🌿 Medium
-        <small>1–100 · 10 attempts</small>
-      </button>
-      <button class="diff-tab hard" onclick="setDiff('hard')">
-        🌾 Hard
-        <small>1–200 · 7 attempts</small>
-      </button>
+      <button class="diff-tab easy active" onclick="setDiff('easy')">🌱 Easy<small>1–50 · 15 attempts</small></button>
+      <button class="diff-tab medium"      onclick="setDiff('medium')">🌿 Medium<small>1–100 · 10 attempts</small></button>
+      <button class="diff-tab hard"        onclick="setDiff('hard')">🌾 Hard<small>1–200 · 7 attempts</small></button>
     </div>
   </div>
 
-  <!-- Stats -->
   <div class="stats">
-    <div class="stat">
-      <div class="stat-num" id="s-used">0</div>
-      <div class="stat-lbl">Used</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num" id="s-left">15</div>
-      <div class="stat-lbl">Left</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num" id="s-wins">0</div>
-      <div class="stat-lbl">Wins</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num" id="s-best">—</div>
-      <div class="stat-lbl">Best</div>
-    </div>
+    <div class="stat"><div class="stat-num" id="s-used">0</div><div class="stat-lbl">Used</div></div>
+    <div class="stat"><div class="stat-num" id="s-left">15</div><div class="stat-lbl">Left</div></div>
+    <div class="stat"><div class="stat-num" id="s-wins">0</div><div class="stat-lbl">Wins</div></div>
+    <div class="stat"><div class="stat-num" id="s-best">—</div><div class="stat-lbl">Best</div></div>
   </div>
 
-  <!-- Game area -->
   <div id="game-area">
 
-    <!-- Attempts bar -->
     <div class="card attempts-section">
       <div class="attempts-top">
         <span class="attempts-label">Attempts Remaining</span>
@@ -292,7 +211,6 @@
       </div>
     </div>
 
-    <!-- Range visualizer -->
     <div class="card range-section">
       <div class="range-eyebrow">Search Range</div>
       <div class="range-bar-wrap">
@@ -306,13 +224,11 @@
       </div>
     </div>
 
-    <!-- Hint banner — matches Java hint(): ≤5=very close, ≤15=getting warmer, else nothing -->
     <div class="hint-banner empty" id="hint-banner">
       <div class="hint-icon">🎯</div>
       <div class="hint-text" id="hint-text">Make your first guess!</div>
     </div>
 
-    <!-- Guess history -->
     <div class="card">
       <div class="sec-lbl">Guess History</div>
       <div class="history-wrap" id="history">
@@ -320,12 +236,10 @@
       </div>
     </div>
 
-    <!-- Input -->
     <div class="card">
       <div class="input-label" id="input-label">Guess a number between 1 and 50</div>
       <div class="input-row">
-        <input type="number" id="guess-input" placeholder="?" min="1" max="50"
-          onkeydown="if(event.key==='Enter') checkGuess()"/>
+        <input type="number" id="guess-input" placeholder="?" min="1" max="50"/>
         <button class="btn btn-submit" id="submit-btn" onclick="checkGuess()">Guess →</button>
       </div>
       <div class="msg-row">
@@ -335,7 +249,6 @@
 
   </div>
 
-  <!-- Result screen -->
   <div id="result-screen" class="card">
     <div class="result-icon" id="r-icon">🎉</div>
     <div class="result-eyebrow" id="r-eyebrow">You found it!</div>
@@ -350,7 +263,6 @@
 </div>
 
 <script>
-  // ── Settings matching Java exactly ──
   const SETTINGS = {
     easy:   { range: 50,  max: 15 },
     medium: { range: 100, max: 10 },
@@ -358,27 +270,19 @@
   };
 
   const SPEECH = {
-    start: [
-      'I\'m thinking of a number... Can you guess it? 🤔',
-      'Pick a number and let\'s go!',
-      'Can you read my mind? 😏',
-      'I\'ve got a number in mind. Find it!',
-    ],
-    low:   ['Too low! Go higher. ↑', 'Higher than that!', 'Aim higher! ↑'],
-    high:  ['Too high! Come down. ↓', 'Lower than that!', 'Too big — go lower! ↓'],
-    hot:   ['So close! Very close! 🔥', 'Almost there — you can feel it!'],
-    warm:  ['Getting warmer... ☀️', 'You\'re in the neighbourhood!'],
-    win:   ['You got it! Brilliant! 🎉', 'Correct! Well played!', 'Yes! That\'s the one! 🎊'],
-    lose:  ['Out of attempts! Better luck next time 🍀', 'So close but no cigar!'],
-    last:  ['Last chance — think carefully!', 'One attempt left — make it count!'],
+    start: ['I\'m thinking of a number... Can you guess it? 🤔','Pick a number and let\'s go!','Can you read my mind? 😏','I\'ve got a number in mind. Find it!'],
+    low:   ['Too low! Go higher. ↑','Higher than that!','Aim higher! ↑'],
+    high:  ['Too high! Come down. ↓','Lower than that!','Too big — go lower! ↓'],
+    hot:   ['So close! Very close! 🔥','Almost there — you can feel it!'],
+    warm:  ['Getting warmer... ☀️','You\'re in the neighbourhood!'],
+    win:   ['You got it! Brilliant! 🎉','Correct! Well played!','Yes! That\'s the one! 🎊'],
+    lose:  ['Out of attempts! Better luck next time 🍀','So close but no cigar!'],
+    last:  ['Last chance — think carefully!','One attempt left — make it count!'],
   };
 
   const $ = id => document.getElementById(id);
-
-  let diff = 'easy';
-  let secret = 0, lo = 1, hi = 50;
-  let attemptsUsed = 0, maxAttempts = 15;
-  let wins = 0, guesses = [];
+  let diff = 'easy', secret = 0, lo = 1, hi = 50;
+  let attemptsUsed = 0, maxAttempts = 15, wins = 0, guesses = [];
   let best = JSON.parse(localStorage.getItem('gi_best') || '{"easy":null,"medium":null,"hard":null}');
 
   function say(type) {
@@ -403,7 +307,7 @@
     const total = SETTINGS[diff].range - 1;
     const loFrac = (lo - 1) / total * 100;
     const hiFrac = (hi - 1) / total * 100;
-    const mid    = (loFrac + hiFrac) / 2;
+    const mid = (loFrac + hiFrac) / 2;
     $('range-fill').style.left  = `${loFrac}%`;
     $('range-fill').style.width = `${hiFrac - loFrac}%`;
     $('range-ptr').style.left   = `${mid}%`;
@@ -412,7 +316,6 @@
     $('input-label').textContent = `Guess a number between ${lo} and ${hi}`;
   }
 
-  // Matches Java hint() exactly: diff≤5 → very close, diff≤15 → getting warmer
   function getHint(guess) {
     const diff_val = Math.abs(guess - secret);
     if (diff_val <= 5)  return { type: 'hot',  icon: '🔥', text: 'Very close! (within 5)' };
@@ -435,22 +338,24 @@
   }
 
   function setHintBanner(type, icon, text) {
-    const el = $('hint-banner');
-    el.className = `hint-banner ${type}`;
-    $('hint-icon').textContent = icon;
-    $('hint-text').textContent = text;
+    $('hint-banner').className    = `hint-banner ${type}`;
+    $('hint-banner').children[0].textContent = icon;
+    $('hint-text').textContent    = text;
   }
 
   function checkGuess() {
-    const val = parseInt($('guess-input').value);
-    const cfg = SETTINGS[diff];
+    const input = $('guess-input');
+    const val   = parseInt(input.value);
+    const cfg   = SETTINGS[diff];
 
     if (isNaN(val) || val < 1 || val > cfg.range) {
       setMsg(`Please enter a number between 1 and ${cfg.range}`, 'err');
+      input.focus();
       return;
     }
     if (guesses.includes(val)) {
       setMsg(`You already guessed ${val}!`, 'err');
+      input.focus();
       return;
     }
 
@@ -459,56 +364,45 @@
     const attLeft = maxAttempts - attemptsUsed;
 
     if (val === secret) {
-      $('guess-input').className = 'ok';
+      input.className = 'ok';
       say('win');
       showResult(true);
       return;
     }
 
-    // Check hint (matches Java hint() logic)
     const hint = getHint(val);
 
     if (val < secret) {
       lo = Math.max(lo, val + 1);
-      $('guess-input').className = 'low';
+      input.className = 'low';
       addChip(val, 'low');
-      if (attLeft === 0) { say('lose'); }
-      else if (attLeft === 1) { say('last'); }
-      else if (hint) { say(hint.type); }
-      else { say('low'); }
+      say(attLeft === 0 ? 'lose' : attLeft === 1 ? 'last' : hint ? hint.type : 'low');
       setMsg(`${val} is too low — go higher!${attLeft > 0 ? ` (${attLeft} left)` : ''}`, 'low');
-      if (hint) setHintBanner(hint.type, hint.icon, hint.text);
-      else setHintBanner('cold', '🥶', 'Still far away...');
+      setHintBanner(hint ? hint.type : 'cold', hint ? hint.icon : '🥶', hint ? hint.text : 'Still far away...');
     } else {
       hi = Math.min(hi, val - 1);
-      $('guess-input').className = 'high';
+      input.className = 'high';
       addChip(val, 'high');
-      if (attLeft === 0) { say('lose'); }
-      else if (attLeft === 1) { say('last'); }
-      else if (hint) { say(hint.type); }
-      else { say('high'); }
+      say(attLeft === 0 ? 'lose' : attLeft === 1 ? 'last' : hint ? hint.type : 'high');
       setMsg(`${val} is too high — go lower!${attLeft > 0 ? ` (${attLeft} left)` : ''}`, 'high');
-      if (hint) setHintBanner(hint.type, hint.icon, hint.text);
-      else setHintBanner('cold', '🥶', 'Still far away...');
+      setHintBanner(hint ? hint.type : 'cold', hint ? hint.icon : '🥶', hint ? hint.text : 'Still far away...');
     }
 
     updateRange();
     syncStats();
-    setTimeout(() => { $('guess-input').className = ''; }, 500);
-    $('guess-input').value = '';
-    $('guess-input').focus();
+    setTimeout(() => { input.className = ''; }, 500);
+    input.value = '';
+    input.focus();
 
-    // Out of attempts
     if (attemptsUsed >= maxAttempts) {
       setMsg(`Out of attempts! The number was ${secret}.`, 'high');
       $('speech').textContent = `The answer was ${secret}. Better luck next time! 🍀`;
       $('submit-btn').disabled = true;
-      $('guess-input').disabled = true;
+      input.disabled = true;
       setTimeout(() => showResult(false), 1200);
     }
   }
 
-  // Rating matches Java printRating(): ratio≤0.3=Excellent, ≤0.6=Good job, else=Keep practising
   function getRating(used, max) {
     const ratio = used / max;
     if (ratio <= 0.3) return '⭐⭐⭐ Excellent!';
@@ -580,8 +474,8 @@
       el.className = 'conf';
       const size = 6 + Math.random() * 9;
       el.style.cssText = `
-        left:${Math.random()*100}vw; top:-10px;
-        width:${size}px; height:${size}px;
+        left:${Math.random()*100}vw;top:-10px;
+        width:${size}px;height:${size}px;
         background:${cols[Math.floor(Math.random()*cols.length)]};
         animation-duration:${1.2+Math.random()*1.2}s;
         animation-delay:${Math.random()*0.5}s;
@@ -591,6 +485,14 @@
       setTimeout(() => el.remove(), 2800);
     }
   }
+
+  // ✅ Global Enter key listener — works anywhere on the page
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      const btn = $('submit-btn');
+      if (btn && !btn.disabled) checkGuess();
+    }
+  });
 
   // Init
   newGame();
